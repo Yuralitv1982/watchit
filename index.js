@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-const debounce = require('lodash.debounce');
-const chokidar = require('chokidar');
-const program = require('caporal');
-const fs = require('fs');
-const { spawn } = require('child_process');
+import debounce from 'lodash.debounce';
+import chokidar from 'chokidar';
+import program from 'caporal';
+import fs from 'fs';
+import { spawn } from 'child_process';
+import chalk from 'chalk';
 
 program
    .version('0.0.1')
@@ -21,6 +22,8 @@ program
          if (proc) {
             proc.kill();
          }
+
+         console.log(chalk.blue('>>>>>Starting process...'));
          proc = spawn('node', [name], { stdio: 'inherit' });
       }, 100);
 
