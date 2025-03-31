@@ -9,7 +9,11 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "bin":{
-    "watchit":"index.js"
+  "bin": {
+    "watchit": "index.js"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "lodash.debounce": "^4.0.8"
   }
 }
